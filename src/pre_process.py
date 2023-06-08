@@ -77,9 +77,12 @@ class PreProcessor():
         self.shape = self.qr_arr.shape
         
         # get halftone img
-        # Picture = Picture.resize(self.shape)
-        HalftoneArr = HalfTone(Picture,k=4)
-        self.pic_arr = np.asarray(Image.fromarray(HalftoneArr).resize(self.shape))
+        Picture = Picture.resize((self.shape[0]//4,self.shape[1]//4))
+        HalftoneArr = HalfTone(Picture,k=4) // 255
+        padding_count = self.shape[0] % 4
+        HalftoneArr = cv2.copyMakeBorder(HalftoneArr,padding_count//2,padding_count-padding_count//2,padding_count//2,padding_count-padding_count//2,borderType=cv2.BORDER_REFLECT)
+        self.pic_arr = np.asarray(HalftoneArr) 
+        # self.pic_arr = HalftoneArr
         
         # get boder arr
         self.ImpMapArr = GetImageBorderArray(np.asarray(Picture.resize(self.shape))).astype(np.uint8)
@@ -104,7 +107,7 @@ class PreProcessor():
         # cv2.waitKey(0)
         return res 
     def GetHalfToneImg(self)->Image:
-        res = Image.fromarray(self.pic_arr,"L")
+        res = Image.fromarray(self.pic_arr * 255,"L")
         return res 
     def GetQrImg(self)->Image:
         res = Image.fromarray(self.qr_arr*255,"L")
