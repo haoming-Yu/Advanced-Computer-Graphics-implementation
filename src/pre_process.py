@@ -114,13 +114,3 @@ class PreProcessor():
         res = Image.fromarray(self.qr_arr*255,"L")
         return res 
 
-img = Image.open('../image/beihaiting.jfif')
-pre = PreProcessor(img,data = "hello world")
-border = pre.GetBorderImg()
-halftone = pre.GetHalfToneImg()
-qr = pre.GetQrImg()
-border.save('../image/border.png')
-halftone.save('../image/halftone.png')
-qr.save('../image/qr.png')
-modules = pre.GetModules()
-print(modules.__len__())

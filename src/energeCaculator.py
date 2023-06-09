@@ -1,4 +1,4 @@
-from pre_process import PreProcessor
+from pre_process import PreProcessor,GetQrCode
 import qrcode
 from PIL import Image
 import math
@@ -9,11 +9,6 @@ import itertools
 import copy
 import random
 
-def GetQrCode(data, version: int = 31) -> Image:
-    qr = qrcode.QRCode(31, box_size=3)
-    qr.add_data(data)
-    qr.make()
-    return qr.make_image()
 
 
 def GeneratePatterns():
