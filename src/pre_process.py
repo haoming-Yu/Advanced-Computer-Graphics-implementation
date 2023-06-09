@@ -4,6 +4,7 @@ from adaptive_filter import GetImageBorderArray
 import numpy as np
 import qrcode
 import cv2
+
 def GetBayerMat(k:int)->tuple([bool,np.array]):
     '''
     函数作用：获取bayer矩阵

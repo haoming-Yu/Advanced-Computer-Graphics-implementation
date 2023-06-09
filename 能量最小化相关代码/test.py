@@ -23,16 +23,25 @@ def graph_cut_image_segmentation(image):
         # 添加像素节点到图中
         nodes = graph.add_grid_nodes((height, width))
 
+        num_labels = 512
+
         # 添加一元项到图中
         for i in range(height):
             for j in range(width):
-                graph.add_tedge(nodes[i, j], unary_terms[i, j][0], unary_terms[i, j][1])
+                for label in range(num_labels):
+                    energy_cost = compute_energy_cost(image[i, j], label)  # 根据图像和标签计算能量成本
+                    graph.add_tedge(nodes[i, j], energy_cost, energy_cost)
 
         # 添加二元项到图中
         for i in range(height - 1):
             for j in range(width - 1):
-                graph.add_edge(nodes[i, j], nodes[i + 1, j], binary_terms[i, j, i + 1, j])
-                graph.add_edge(nodes[i, j], nodes[i, j + 1], binary_terms[i, j, i, j + 1])
+                for label1 in range(num_labels):
+                    for label2 in range(num_labels):
+                        energy_cost = compute_energy_cost(label1, label2)  # 根据标签对计算能量成本
+                        graph.add_edge(nodes[i, j], nodes[i + 1, j], energy_cost[label1, label2])
+                        graph.add_edge(nodes[i, j], nodes[i, j + 1], energy_cost[label1, label2])
+                        graph.add_edge(nodes[i, j], nodes[i - 1, j], energy_cost[label1, label2])
+                        graph.add_edge(nodes[i, j], nodes[i, j - 1], energy_cost[label1, label2])
 
         # 使用图割算法求解最小割
         graph.maxflow()
