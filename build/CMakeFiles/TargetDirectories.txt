@@ -1,6 +1,6 @@
-/mnt/d/course_new/CG/lab/build/CMakeFiles/rebuild_cache.dir
-/mnt/d/course_new/CG/lab/build/CMakeFiles/edit_cache.dir
-/mnt/d/course_new/CG/lab/build/CMakeFiles/HQRC.dir
-/mnt/d/course_new/CG/lab/build/gco/CMakeFiles/edit_cache.dir
-/mnt/d/course_new/CG/lab/build/gco/CMakeFiles/rebuild_cache.dir
-/mnt/d/course_new/CG/lab/build/gco/CMakeFiles/GCO.dir
+/home/ianafp/code/CG/HRQC/build/CMakeFiles/rebuild_cache.dir
+/home/ianafp/code/CG/HRQC/build/CMakeFiles/edit_cache.dir
+/home/ianafp/code/CG/HRQC/build/CMakeFiles/HQRC.dir
+/home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/edit_cache.dir
+/home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/rebuild_cache.dir
+/home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/GCO.dir

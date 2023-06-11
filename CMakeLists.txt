@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(HQRC)
 set(GCO_DIR ${PROJECT_SOURCE_DIR}/gco)
-
+add_compile_options(-g )
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 file(GLOB_RECURSE CXX_SOURCES "src/*.cpp" "src/*/*.cpp" "src/*/*/*.cpp")

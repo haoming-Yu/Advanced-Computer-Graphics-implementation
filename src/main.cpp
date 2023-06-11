@@ -23,5 +23,5 @@ int main(void)
             ConvertIdToPattern(qrcode,i,j,label[index++]);
         }
     }
-    cv::imwrite("res_qr.png",qrcode);
+    cv::imwrite("../img/res_qr.png",qrcode);
 }

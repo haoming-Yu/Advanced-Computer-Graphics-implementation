@@ -60,13 +60,13 @@ stdio.h
 graph.h
 ../gco/include/graph.h
 
-/mnt/d/course_new/CG/lab/gco/src/GCoptimization.cpp
+/home/ianafp/code/CG/HRQC/gco/src/GCoptimization.cpp
 mex.h
 -
 GCoptimization.h
-/mnt/d/course_new/CG/lab/gco/src/GCoptimization.h
+/home/ianafp/code/CG/HRQC/gco/src/GCoptimization.h
 LinkedBlockList.h
-/mnt/d/course_new/CG/lab/gco/src/LinkedBlockList.h
+/home/ianafp/code/CG/HRQC/gco/src/LinkedBlockList.h
 stdio.h
 -
 stdlib.h
@@ -78,15 +78,15 @@ algorithm
 windows.h
 -
 
-/mnt/d/course_new/CG/lab/gco/src/LinkedBlockList.cpp
+/home/ianafp/code/CG/HRQC/gco/src/LinkedBlockList.cpp
 LinkedBlockList.h
-/mnt/d/course_new/CG/lab/gco/src/LinkedBlockList.h
+/home/ianafp/code/CG/HRQC/gco/src/LinkedBlockList.h
 stdio.h
 -
 stdlib.h
 -
 
-/mnt/d/course_new/CG/lab/gco/src/example.cpp
+/home/ianafp/code/CG/HRQC/gco/src/example.cpp
 stdio.h
 -
 stdlib.h
@@ -98,5 +98,5 @@ string.h
 time.h
 -
 GCoptimization.h
-/mnt/d/course_new/CG/lab/gco/src/GCoptimization.h
+/home/ianafp/code/CG/HRQC/gco/src/GCoptimization.h
 

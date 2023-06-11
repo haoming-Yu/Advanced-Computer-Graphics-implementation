@@ -16,3 +16,8 @@ EnergyType GetSmoothCost(int PatternId1,int PatternId2)
 {
     return cv::saturate_cast<EnergyType>(GetSimilirary(PatternId1,PatternId2));
 }
+EnergyType GetEdgeWeight(int data1,int data2)
+{
+	return cv::saturate_cast<EnergyType>(exp(-GetSimilirary(data1,data2)));
+
+}

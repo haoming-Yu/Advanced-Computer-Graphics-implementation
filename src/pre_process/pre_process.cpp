@@ -104,7 +104,10 @@ double GetSimilirary(int data1,int data2){
 	// }
 	// e /= 9.0;
 	// return e;
-    return simvals[(data1<<9)+data2];
+	if(data1>data2){
+		data1 ^= data2 ^= data1 ^= data2;
+	}
+    return fabs(simvals[(data1<<9)+data2]);
 }
 double GetReliability(int data){
     return reliability[data];
@@ -136,7 +139,7 @@ void GetModules(const cv::Mat& halftone_img,const cv::Mat& qrcode_img,const cv::
         {
             module temp;
             temp.data = GetPatternId(halftone_img,i,j);
-            temp.data = (int)qrcode_img.at<unsigned char>(i+1,j+1);
+            temp.center = (int)qrcode_img.at<unsigned char>(i+1,j+1);
             temp.importance = (int)(
                 importance_map.at<uchar>(i,j) + importance_map.at<uchar>(i,j+1) + importance_map.at<uchar>(i,j+2)+
                 importance_map.at<uchar>(i+1,j) + importance_map.at<uchar>(i+1,j+1) + importance_map.at<uchar>(i+1,j+2)+
@@ -154,7 +157,7 @@ void ConvertIdToPattern(cv::Mat &mat,int row_location,int col_location, int id)
     {
         for(int j = col_location; j < col_location + 3; ++j)
         {
-            mat.at<uchar>(i,j) = (id&1)?255:0;
+            mat.at<uchar>(i,j) = (id&1)?0:255;
             id >>= 1;
         }
     }

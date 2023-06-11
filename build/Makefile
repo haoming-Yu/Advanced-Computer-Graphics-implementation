@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/course_new/CG/lab
+CMAKE_SOURCE_DIR = /home/ianafp/code/CG/HRQC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/course_new/CG/lab/build
+CMAKE_BINARY_DIR = /home/ianafp/code/CG/HRQC/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/course_new/CG/lab/build/CMakeFiles /mnt/d/course_new/CG/lab/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ianafp/code/CG/HRQC/build/CMakeFiles /home/ianafp/code/CG/HRQC/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/course_new/CG/lab/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ianafp/code/CG/HRQC/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,6 +162,33 @@ src/ImpMap.s: src/ImpMap.cpp.s
 src/ImpMap.cpp.s:
 	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/ImpMap.cpp.s
 .PHONY : src/ImpMap.cpp.s
+
+src/energy/energy.o: src/energy/energy.cpp.o
+
+.PHONY : src/energy/energy.o
+
+# target to build an object file
+src/energy/energy.cpp.o:
+	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/energy/energy.cpp.o
+.PHONY : src/energy/energy.cpp.o
+
+src/energy/energy.i: src/energy/energy.cpp.i
+
+.PHONY : src/energy/energy.i
+
+# target to preprocess a source file
+src/energy/energy.cpp.i:
+	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/energy/energy.cpp.i
+.PHONY : src/energy/energy.cpp.i
+
+src/energy/energy.s: src/energy/energy.cpp.s
+
+.PHONY : src/energy/energy.s
+
+# target to generate assembly for a file
+src/energy/energy.cpp.s:
+	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/energy/energy.cpp.s
+.PHONY : src/energy/energy.cpp.s
 
 src/halftone.o: src/halftone.cpp.o
 
@@ -325,6 +352,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/optimize/optimize.o: src/optimize/optimize.cpp.o
+
+.PHONY : src/optimize/optimize.o
+
+# target to build an object file
+src/optimize/optimize.cpp.o:
+	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/optimize/optimize.cpp.o
+.PHONY : src/optimize/optimize.cpp.o
+
+src/optimize/optimize.i: src/optimize/optimize.cpp.i
+
+.PHONY : src/optimize/optimize.i
+
+# target to preprocess a source file
+src/optimize/optimize.cpp.i:
+	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/optimize/optimize.cpp.i
+.PHONY : src/optimize/optimize.cpp.i
+
+src/optimize/optimize.s: src/optimize/optimize.cpp.s
+
+.PHONY : src/optimize/optimize.s
+
+# target to generate assembly for a file
+src/optimize/optimize.cpp.s:
+	$(MAKE) -f CMakeFiles/HQRC.dir/build.make CMakeFiles/HQRC.dir/src/optimize/optimize.cpp.s
+.PHONY : src/optimize/optimize.cpp.s
+
 src/pre_process/pre_process.o: src/pre_process/pre_process.cpp.o
 
 .PHONY : src/pre_process/pre_process.o
@@ -365,6 +419,9 @@ help:
 	@echo "... src/ImpMap.o"
 	@echo "... src/ImpMap.i"
 	@echo "... src/ImpMap.s"
+	@echo "... src/energy/energy.o"
+	@echo "... src/energy/energy.i"
+	@echo "... src/energy/energy.s"
 	@echo "... src/halftone.o"
 	@echo "... src/halftone.i"
 	@echo "... src/halftone.s"
@@ -383,6 +440,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/optimize/optimize.o"
+	@echo "... src/optimize/optimize.i"
+	@echo "... src/optimize/optimize.s"
 	@echo "... src/pre_process/pre_process.o"
 	@echo "... src/pre_process/pre_process.i"
 	@echo "... src/pre_process/pre_process.s"

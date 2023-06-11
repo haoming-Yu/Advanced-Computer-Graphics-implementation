@@ -6,7 +6,7 @@ void OptimizeBySwap(int row,int col,std::vector<module> &modules,std::vector<int
     row /= 3;
     col /= 3;
     try{
-        GCoptimizationGridGraph *gc = new GCoptimizationGridGraph(col, row, NUM_LABELS);
+        GCoptimizationGeneralGraph *gc = new GCoptimizationGeneralGraph(modules.size(),512);
         
         EnergyType *data = new EnergyType[modules.size()*NUM_LABELS];
         // first set up data costs individually
@@ -41,7 +41,22 @@ void OptimizeBySwap(int row,int col,std::vector<module> &modules,std::vector<int
         
         gc->setDataCost(data);
         gc->setSmoothCost(smooth);
-
+        // add edge
+        // row edge
+        for(int i=0;i<row ;++i)
+        {
+            for(int j=0;j<col-1;++j)
+            {
+                gc->setNeighbors(i*row+j,i*row+j+1,GetEdgeWeight(modules[i*row+j].data,modules[i*row+j+1].data));
+            }
+        }
+        for(int i=0;i<row -1;++i)
+        {
+            for(int j=0;j<col;++j)
+            {
+                gc->setNeighbors(i*row+j,(i+1)*row+j,GetEdgeWeight(modules[i*row+j].data,modules[(i+1)*row+j].data));
+            }
+        }
         printf("\nBefore optimization energy is %lld\n", gc->compute_energy());
         gc->swap(-1);
         printf("\nAfter optimization energy is %lld\n", gc->compute_energy());
