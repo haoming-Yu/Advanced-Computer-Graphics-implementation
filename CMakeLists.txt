@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.13)
+project(HQRC)
+set(GCO_DIR ${PROJECT_SOURCE_DIR}/gco)
+
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+file(GLOB_RECURSE CXX_SOURCES "src/*.cpp" "src/*/*.cpp" "src/*/*/*.cpp")
+set(SOURCES ${CXX_SOURCES} ${GCO_DIR})
+include_directories(${GCO_DIR}/include)
+include_directories(src/include)
+add_subdirectory(${GCO_DIR})
+
+add_executable(HQRC ${SOURCES})
+link_directories(${OpenCV_LIBRARY_DIRS})
+# message(STATUS "path = ${OpenCV_LIBS}")
+# target_link_directories(HQRC PUBLIC ${OpenCV_LIBS})
+target_link_libraries(HQRC ${OpenCV_LIBS})
+target_link_libraries(HQRC GCO)
+
+# link_directories(${OpenCV_LIBRARY_DIRS})

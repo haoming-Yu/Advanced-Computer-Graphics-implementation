@@ -1,0 +1,3 @@
+/home/ianafp/code/CG/HRQC/gco/build/CMakeFiles/edit_cache.dir
+/home/ianafp/code/CG/HRQC/gco/build/CMakeFiles/rebuild_cache.dir
+/home/ianafp/code/CG/HRQC/gco/build/CMakeFiles/GCO.dir

@@ -1,0 +1,42 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "d:\\course_new\\CG\\gco-v3.0/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\course_new\\compiler\\tools\\ComplierComplier\\MinGW\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerPathInCppPropertiesJson": "D:\\course_new\\compiler\\tools\\ComplierComplier\\MinGW\\bin\\gcc.exe",
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\course_new\\compiler\\tools\\ComplierComplier\\MinGW\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "intelliSenseMode": "windows-msvc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}
