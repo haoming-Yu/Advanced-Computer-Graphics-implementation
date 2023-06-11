@@ -1,36 +1,48 @@
 #include "optimize/optimize.h"
+#include "energy/energy.h"
 
-typedef GCoptimizationGridGraph::EnergyTermType EnergyT;
-
-void OptimizeBySwap(int row,int col,std::vector<module> &modules)
+void OptimizeBySwap(int row,int col,std::vector<module> &modules,std::vector<int> &res)
 {
     try{
         GCoptimizationGridGraph *gc = new GCoptimizationGridGraph(col, row, NUM_LABELS);
         
-        EnergyT *data = new int[modules.size()*NUM_LABELS];
+        EnergyType *data = new EnergyType[modules.size()*NUM_LABELS];
         // first set up data costs individually
         for ( int i = 0; i < modules.size(); i++ ) {
             for ( int l = 0; l < NUM_LABELS; l++ ) {
                 // here we need to set the data cost from each module to the label using gc->setDataCost function
                 // fill in the data array here
+                EnergyType data_pair = GetDataCost(modules[i],l);
+                data[i*NUM_LABELS + l] = data_pair;
             }
         }
 
         // next set up smoothness costs individually
         // here we use a 512*512 matrix to represent the smooth cost
-        EnergyT *smooth;
+        EnergyType *smooth = new EnergyType[NUM_LABELS*NUM_LABELS];
+        for ( int i = 0; i < NUM_LABELS; i++ ) {
+            for ( int j = 0; j < NUM_LABELS; j++ ) {
+                smooth[i*NUM_LABELS + j] = GetSmoothCost(i, j);
+            }
+        }
         // the outer space should pass a matrix to this module, so just fill in this variable with that argument.
         
         gc->setDataCost(data);
         gc->setSmoothCost(smooth);
 
         printf("\nBefore optimization energy is %d\n", gc->compute_energy());
-        int iter_num = 0;
-        while(1) {
-            // use alpha-beta swap to do the optimization
-            // and here the convergence is ensured using argument -1
-            gc->swap(-1);
-            
+        gc->swap(-1);
+        printf("\nAfter optimization energy is %d\n", gc->compute_energy());
+        
+        for ( int i = 0; i < modules.size(); i++ ) {
+            res.push_back(gc->whatLabel(i));
         }
+        delete gc;
     }
+    catch (GCException e){
+		e.Report();
+	}
+
+    delete[] data;
+    delete[] smooth;
 }
