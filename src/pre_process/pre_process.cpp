@@ -100,3 +100,53 @@ double GetSimilirary(int data1,int data2){
 double GetReliability(int data){
     return reliability[data];
 }
+int GetPatternId(const cv::Mat &mat,int row_location,int col_location)
+{
+    int Id = 0,mask = 1;
+    for(int i = row_location;i < row_location + 3;++i)
+    {
+        for(int j = col_location; j < col_location + 3; ++j)
+        {
+            if(mat.at<unsigned char>(i,j)>0)
+            {
+                Id |= mask;
+            }
+            mask <<= 1;
+        }
+    }
+    return Id;
+}
+void GetModules(const cv::Mat& halftone_img,const cv::Mat& qrcode_img,const cv::Mat& importance_map,std::vector<module> &modules)
+{
+    int row = halftone_img.rows,col = halftone_img.cols;
+    assert(row == importance_map.rows && col == importance_map.cols);
+    assert(row % 3 == 0 && col % 3 == 0);
+    for(int i=0;i<row;i+=3)
+    {
+        for(int j=0;j<col;j+33)
+        {
+            module temp;
+            temp.data = GetPatternId(halftone_img,i,j);
+            temp.data = (int)qrcode_img.at<unsigned char>(i+1,j+1);
+            temp.importance = (int)(
+                importance_map.at<uchar>(i,j) + importance_map.at<uchar>(i,j+1) + importance_map.at<uchar>(i,j+2)+
+                importance_map.at<uchar>(i+1,j) + importance_map.at<uchar>(i+1,j+1) + importance_map.at<uchar>(i+1,j+2)+
+                importance_map.at<uchar>(i+2,j) + importance_map.at<uchar>(i+2,j+1) + importance_map.at<uchar>(i+2,j+2)
+            ) ;
+            modules.push_back(temp);
+        }
+    }
+
+}
+
+void ConvertIdToPattern(cv::Mat &mat,int row_location,int col_location, int id)
+{
+    for(int i = row_location;i < row_location + 3;++i)
+    {
+        for(int j = col_location; j < col_location + 3; ++j)
+        {
+            mat.at<uchar>(i,j) = (id&1)?255:0;
+            id >>= 1;
+        }
+    }
+}
