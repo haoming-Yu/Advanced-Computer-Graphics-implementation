@@ -95,6 +95,15 @@ static double simvals[]={1,0.558808,0.339246,0.337345,0.558808,0.336486,0.337345
 };
 
 double GetSimilirary(int data1,int data2){
+	// double e = 0;
+	// for(int i=0;i<9;++i)
+	// {
+	// 	e += (data1&1)==(data2&1);
+	// 	data1 >>= 1;
+	// 	data2 >>= 1;
+	// }
+	// e /= 9.0;
+	// return e;
     return simvals[(data1<<9)+data2];
 }
 double GetReliability(int data){
@@ -123,7 +132,7 @@ void GetModules(const cv::Mat& halftone_img,const cv::Mat& qrcode_img,const cv::
     assert(row % 3 == 0 && col % 3 == 0);
     for(int i=0;i<row;i+=3)
     {
-        for(int j=0;j<col;j+33)
+        for(int j=0;j<col;j+=3)
         {
             module temp;
             temp.data = GetPatternId(halftone_img,i,j);

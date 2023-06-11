@@ -3,6 +3,8 @@
 
 void OptimizeBySwap(int row,int col,std::vector<module> &modules,std::vector<int> &res)
 {
+    row /= 3;
+    col /= 3;
     try{
         GCoptimizationGridGraph *gc = new GCoptimizationGridGraph(col, row, NUM_LABELS);
         
@@ -30,19 +32,19 @@ void OptimizeBySwap(int row,int col,std::vector<module> &modules,std::vector<int
         gc->setDataCost(data);
         gc->setSmoothCost(smooth);
 
-        printf("\nBefore optimization energy is %d\n", gc->compute_energy());
+        printf("\nBefore optimization energy is %lld\n", gc->compute_energy());
         gc->swap(-1);
-        printf("\nAfter optimization energy is %d\n", gc->compute_energy());
+        printf("\nAfter optimization energy is %lld\n", gc->compute_energy());
         
         for ( int i = 0; i < modules.size(); i++ ) {
             res.push_back(gc->whatLabel(i));
         }
         delete gc;
+        delete[] data;
+        delete[] smooth;
     }
     catch (GCException e){
 		e.Report();
 	}
 
-    delete[] data;
-    delete[] smooth;
 }
