@@ -1,3 +1,5 @@
+#ifndef _PRE_PROCESS_
+#define _PRE_PROCESS_
 #include <vector>
 #include <assert.h>
 #include <opencv2/core/core.hpp>
@@ -13,7 +15,7 @@
  * data low 9 bit is the data 3*3 data matrix
  * 
  */
-typedef struct
+typedef struct 
 {
     int data;
     int center;
@@ -30,4 +32,5 @@ double GetSimilirary(int data1,int data2);
 double GetReliability(int data);
 int GetPatternId(const cv::Mat &mat,int row_location,int col_location);
 void ConvertIdToPattern(cv::Mat &mat,int row_location,int col_location, int id);
-void GetModules(const cv::Mat& halftone_img,const cv::Mat& importance_map,std::vector<module> &modules);
+void GetModules(const cv::Mat& halftone_img,const cv::Mat& qrcode_img,const cv::Mat& importance_map,std::vector<module> &modules);
+#endif
