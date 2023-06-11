@@ -1,4 +1,4 @@
-# Install script for directory: /home/ianafp/code/CG/HRQC/gco
+# Install script for directory: /mnt/d/course_new/CG/lab/gco
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

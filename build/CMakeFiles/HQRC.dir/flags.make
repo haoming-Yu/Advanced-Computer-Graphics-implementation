@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ianafp/code/CG/HRQC/gco/include -I/home/ianafp/code/CG/HRQC/src/include -isystem /usr/local/include/opencv4 
+CXX_INCLUDES = -I/mnt/d/course_new/CG/lab/gco/include -I/mnt/d/course_new/CG/lab/src/include -isystem /usr/local/include/opencv4 
 

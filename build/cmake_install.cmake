@@ -1,4 +1,4 @@
-# Install script for directory: /home/ianafp/code/CG/HRQC
+# Install script for directory: /mnt/d/course_new/CG/lab
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ianafp/code/CG/HRQC/build/gco/cmake_install.cmake")
+  include("/mnt/d/course_new/CG/lab/build/gco/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ianafp/code/CG/HRQC/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/d/course_new/CG/lab/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

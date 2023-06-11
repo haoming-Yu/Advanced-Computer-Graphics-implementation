@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ianafp/code/CG/HRQC
+CMAKE_SOURCE_DIR = /mnt/d/course_new/CG/lab
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ianafp/code/CG/HRQC/build
+CMAKE_BINARY_DIR = /mnt/d/course_new/CG/lab/build
 
 # Include any dependencies generated for this target.
 include gco/CMakeFiles/GCO.dir/depend.make
@@ -59,42 +59,42 @@ include gco/CMakeFiles/GCO.dir/flags.make
 
 gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o: gco/CMakeFiles/GCO.dir/flags.make
 gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o: ../gco/src/GCoptimization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ianafp/code/CG/HRQC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GCO.dir/src/GCoptimization.cpp.o -c /home/ianafp/code/CG/HRQC/gco/src/GCoptimization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/course_new/CG/lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o"
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GCO.dir/src/GCoptimization.cpp.o -c /mnt/d/course_new/CG/lab/gco/src/GCoptimization.cpp
 
 gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GCO.dir/src/GCoptimization.cpp.i"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ianafp/code/CG/HRQC/gco/src/GCoptimization.cpp > CMakeFiles/GCO.dir/src/GCoptimization.cpp.i
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/course_new/CG/lab/gco/src/GCoptimization.cpp > CMakeFiles/GCO.dir/src/GCoptimization.cpp.i
 
 gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GCO.dir/src/GCoptimization.cpp.s"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ianafp/code/CG/HRQC/gco/src/GCoptimization.cpp -o CMakeFiles/GCO.dir/src/GCoptimization.cpp.s
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/course_new/CG/lab/gco/src/GCoptimization.cpp -o CMakeFiles/GCO.dir/src/GCoptimization.cpp.s
 
 gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o: gco/CMakeFiles/GCO.dir/flags.make
 gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o: ../gco/src/LinkedBlockList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ianafp/code/CG/HRQC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o -c /home/ianafp/code/CG/HRQC/gco/src/LinkedBlockList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/course_new/CG/lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o"
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o -c /mnt/d/course_new/CG/lab/gco/src/LinkedBlockList.cpp
 
 gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.i"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ianafp/code/CG/HRQC/gco/src/LinkedBlockList.cpp > CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.i
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/course_new/CG/lab/gco/src/LinkedBlockList.cpp > CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.i
 
 gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.s"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ianafp/code/CG/HRQC/gco/src/LinkedBlockList.cpp -o CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.s
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/course_new/CG/lab/gco/src/LinkedBlockList.cpp -o CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.s
 
 gco/CMakeFiles/GCO.dir/src/example.cpp.o: gco/CMakeFiles/GCO.dir/flags.make
 gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/src/example.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ianafp/code/CG/HRQC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object gco/CMakeFiles/GCO.dir/src/example.cpp.o"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GCO.dir/src/example.cpp.o -c /home/ianafp/code/CG/HRQC/gco/src/example.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/course_new/CG/lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object gco/CMakeFiles/GCO.dir/src/example.cpp.o"
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GCO.dir/src/example.cpp.o -c /mnt/d/course_new/CG/lab/gco/src/example.cpp
 
 gco/CMakeFiles/GCO.dir/src/example.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GCO.dir/src/example.cpp.i"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ianafp/code/CG/HRQC/gco/src/example.cpp > CMakeFiles/GCO.dir/src/example.cpp.i
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/course_new/CG/lab/gco/src/example.cpp > CMakeFiles/GCO.dir/src/example.cpp.i
 
 gco/CMakeFiles/GCO.dir/src/example.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GCO.dir/src/example.cpp.s"
-	cd /home/ianafp/code/CG/HRQC/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ianafp/code/CG/HRQC/gco/src/example.cpp -o CMakeFiles/GCO.dir/src/example.cpp.s
+	cd /mnt/d/course_new/CG/lab/build/gco && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/course_new/CG/lab/gco/src/example.cpp -o CMakeFiles/GCO.dir/src/example.cpp.s
 
 # Object files for target GCO
 GCO_OBJECTS = \
@@ -110,8 +110,8 @@ gco/libGCO.so: gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o
 gco/libGCO.so: gco/CMakeFiles/GCO.dir/src/example.cpp.o
 gco/libGCO.so: gco/CMakeFiles/GCO.dir/build.make
 gco/libGCO.so: gco/CMakeFiles/GCO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ianafp/code/CG/HRQC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libGCO.so"
-	cd /home/ianafp/code/CG/HRQC/build/gco && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GCO.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/course_new/CG/lab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libGCO.so"
+	cd /mnt/d/course_new/CG/lab/build/gco && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GCO.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 gco/CMakeFiles/GCO.dir/build: gco/libGCO.so
@@ -119,10 +119,10 @@ gco/CMakeFiles/GCO.dir/build: gco/libGCO.so
 .PHONY : gco/CMakeFiles/GCO.dir/build
 
 gco/CMakeFiles/GCO.dir/clean:
-	cd /home/ianafp/code/CG/HRQC/build/gco && $(CMAKE_COMMAND) -P CMakeFiles/GCO.dir/cmake_clean.cmake
+	cd /mnt/d/course_new/CG/lab/build/gco && $(CMAKE_COMMAND) -P CMakeFiles/GCO.dir/cmake_clean.cmake
 .PHONY : gco/CMakeFiles/GCO.dir/clean
 
 gco/CMakeFiles/GCO.dir/depend:
-	cd /home/ianafp/code/CG/HRQC/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ianafp/code/CG/HRQC /home/ianafp/code/CG/HRQC/gco /home/ianafp/code/CG/HRQC/build /home/ianafp/code/CG/HRQC/build/gco /home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/GCO.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/d/course_new/CG/lab/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/d/course_new/CG/lab /mnt/d/course_new/CG/lab/gco /mnt/d/course_new/CG/lab/build /mnt/d/course_new/CG/lab/build/gco /mnt/d/course_new/CG/lab/build/gco/CMakeFiles/GCO.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : gco/CMakeFiles/GCO.dir/depend
 
