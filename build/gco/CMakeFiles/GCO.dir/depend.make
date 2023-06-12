@@ -13,11 +13,3 @@ gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o: ../gco/src/GCoptimization.cpp
 gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o: ../gco/include/LinkedBlockList.h
 gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o: ../gco/src/LinkedBlockList.cpp
 
-gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/include/GCoptimization.h
-gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/include/block.h
-gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/include/energy.h
-gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/include/graph.cpp
-gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/include/graph.h
-gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/include/maxflow.cpp
-gco/CMakeFiles/GCO.dir/src/example.cpp.o: ../gco/src/example.cpp
-

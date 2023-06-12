@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ianafp/code/CG/HRQC
+CMAKE_SOURCE_DIR = /home/ianafp/code/CG/HQRC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ianafp/code/CG/HRQC/build
+CMAKE_BINARY_DIR = /home/ianafp/code/CG/HQRC/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ianafp/code/CG/HRQC/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ianafp/code/CG/HRQC/build/CMakeFiles /home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/progress.marks
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ianafp/code/CG/HRQC/build/CMakeFiles 0
+	cd /home/ianafp/code/CG/HQRC/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ianafp/code/CG/HQRC/build/CMakeFiles /home/ianafp/code/CG/HQRC/build/gco/CMakeFiles/progress.marks
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ianafp/code/CG/HQRC/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/clean
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/preinstall
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/preinstall
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ianafp/code/CG/HRQC/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ianafp/code/CG/HQRC/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 gco/CMakeFiles/GCO.dir/rule:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/CMakeFiles/GCO.dir/rule
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f CMakeFiles/Makefile2 gco/CMakeFiles/GCO.dir/rule
 .PHONY : gco/CMakeFiles/GCO.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ GCO: gco/CMakeFiles/GCO.dir/rule
 
 # fast build rule for target.
 GCO/fast:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/build
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/build
 .PHONY : GCO/fast
 
 src/GCoptimization.o: src/GCoptimization.cpp.o
@@ -131,7 +131,7 @@ src/GCoptimization.o: src/GCoptimization.cpp.o
 
 # target to build an object file
 src/GCoptimization.cpp.o:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o
 .PHONY : src/GCoptimization.cpp.o
 
 src/GCoptimization.i: src/GCoptimization.cpp.i
@@ -140,7 +140,7 @@ src/GCoptimization.i: src/GCoptimization.cpp.i
 
 # target to preprocess a source file
 src/GCoptimization.cpp.i:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.i
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.i
 .PHONY : src/GCoptimization.cpp.i
 
 src/GCoptimization.s: src/GCoptimization.cpp.s
@@ -149,7 +149,7 @@ src/GCoptimization.s: src/GCoptimization.cpp.s
 
 # target to generate assembly for a file
 src/GCoptimization.cpp.s:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.s
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.s
 .PHONY : src/GCoptimization.cpp.s
 
 src/LinkedBlockList.o: src/LinkedBlockList.cpp.o
@@ -158,7 +158,7 @@ src/LinkedBlockList.o: src/LinkedBlockList.cpp.o
 
 # target to build an object file
 src/LinkedBlockList.cpp.o:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o
 .PHONY : src/LinkedBlockList.cpp.o
 
 src/LinkedBlockList.i: src/LinkedBlockList.cpp.i
@@ -167,7 +167,7 @@ src/LinkedBlockList.i: src/LinkedBlockList.cpp.i
 
 # target to preprocess a source file
 src/LinkedBlockList.cpp.i:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.i
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.i
 .PHONY : src/LinkedBlockList.cpp.i
 
 src/LinkedBlockList.s: src/LinkedBlockList.cpp.s
@@ -176,35 +176,8 @@ src/LinkedBlockList.s: src/LinkedBlockList.cpp.s
 
 # target to generate assembly for a file
 src/LinkedBlockList.cpp.s:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.s
+	cd /home/ianafp/code/CG/HQRC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.s
 .PHONY : src/LinkedBlockList.cpp.s
-
-src/example.o: src/example.cpp.o
-
-.PHONY : src/example.o
-
-# target to build an object file
-src/example.cpp.o:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/example.cpp.o
-.PHONY : src/example.cpp.o
-
-src/example.i: src/example.cpp.i
-
-.PHONY : src/example.i
-
-# target to preprocess a source file
-src/example.cpp.i:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/example.cpp.i
-.PHONY : src/example.cpp.i
-
-src/example.s: src/example.cpp.s
-
-.PHONY : src/example.s
-
-# target to generate assembly for a file
-src/example.cpp.s:
-	cd /home/ianafp/code/CG/HRQC/build && $(MAKE) -f gco/CMakeFiles/GCO.dir/build.make gco/CMakeFiles/GCO.dir/src/example.cpp.s
-.PHONY : src/example.cpp.s
 
 # Help Target
 help:
@@ -221,9 +194,6 @@ help:
 	@echo "... src/LinkedBlockList.o"
 	@echo "... src/LinkedBlockList.i"
 	@echo "... src/LinkedBlockList.s"
-	@echo "... src/example.o"
-	@echo "... src/example.i"
-	@echo "... src/example.s"
 .PHONY : help
 
 
@@ -235,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ianafp/code/CG/HRQC/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ianafp/code/CG/HQRC/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

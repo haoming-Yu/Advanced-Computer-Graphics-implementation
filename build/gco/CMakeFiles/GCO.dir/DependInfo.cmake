@@ -4,9 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ianafp/code/CG/HRQC/gco/src/GCoptimization.cpp" "/home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o"
-  "/home/ianafp/code/CG/HRQC/gco/src/LinkedBlockList.cpp" "/home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o"
-  "/home/ianafp/code/CG/HRQC/gco/src/example.cpp" "/home/ianafp/code/CG/HRQC/build/gco/CMakeFiles/GCO.dir/src/example.cpp.o"
+  "/home/ianafp/code/CG/HQRC/gco/src/GCoptimization.cpp" "/home/ianafp/code/CG/HQRC/build/gco/CMakeFiles/GCO.dir/src/GCoptimization.cpp.o"
+  "/home/ianafp/code/CG/HQRC/gco/src/LinkedBlockList.cpp" "/home/ianafp/code/CG/HQRC/build/gco/CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

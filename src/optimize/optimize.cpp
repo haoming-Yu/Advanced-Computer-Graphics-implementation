@@ -43,23 +43,25 @@ void OptimizeBySwap(int row,int col,std::vector<module> &modules,std::vector<int
         gc->setSmoothCost(smooth);
         // add edge
         // row edge
+        // gc->setNeighbors(0,1,0.05);
         for(int i=0;i<row ;++i)
         {
             for(int j=0;j<col-1;++j)
             {
-                gc->setNeighbors(i*row+j,i*row+j+1,GetEdgeWeight(modules[i*row+j].data,modules[i*row+j+1].data));
+                gc->setNeighbors(i*col+j,i*col+j+1,GetEdgeWeight(modules[i*col+j].data,modules[i*col+j+1].data));
             }
         }
+        // col edge
         for(int i=0;i<row -1;++i)
         {
             for(int j=0;j<col;++j)
             {
-                gc->setNeighbors(i*row+j,(i+1)*row+j,GetEdgeWeight(modules[i*row+j].data,modules[(i+1)*row+j].data));
+                gc->setNeighbors(i*col+j,(i+1)*col+j,GetEdgeWeight(modules[i*col+j].data,modules[(i+1)*col+j].data));
             }
         }
-        printf("\nBefore optimization energy is %lld\n", gc->compute_energy());
+        printf("\nBefore optimization energy is %lf\n", gc->compute_energy());
         gc->swap(-1);
-        printf("\nAfter optimization energy is %lld\n", gc->compute_energy());
+        printf("\nAfter optimization energy is %lf\n", gc->compute_energy());
         
         for ( int i = 0; i < modules.size(); i++ ) {
             res.push_back(gc->whatLabel(i));

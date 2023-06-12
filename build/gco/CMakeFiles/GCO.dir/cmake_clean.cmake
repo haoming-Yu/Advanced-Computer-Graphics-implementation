@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/GCO.dir/src/GCoptimization.cpp.o"
   "CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o"
-  "CMakeFiles/GCO.dir/src/example.cpp.o"
   "libGCO.pdb"
   "libGCO.so"
 )

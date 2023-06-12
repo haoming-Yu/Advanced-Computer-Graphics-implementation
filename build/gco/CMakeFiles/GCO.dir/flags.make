@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -g
 
 CXX_DEFINES = -DGCO_EXPORTS
 
-CXX_INCLUDES = -I/usr/local/include/opencv4 -I/home/ianafp/code/CG/HRQC/gco/include -I/home/ianafp/code/CG/HRQC/src/include 
+CXX_INCLUDES = -I/usr/local/include/opencv4 -I/home/ianafp/code/CG/HQRC/gco/include -I/home/ianafp/code/CG/HQRC/src/include 
 

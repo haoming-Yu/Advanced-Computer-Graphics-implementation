@@ -114,6 +114,7 @@
 // Utility functions, classes, and macros
 /////////////////////////////////////////////////////////////////////
 
+#define GCO_ENERGYTERMTYPE double
 class GCException {
 public:
 	const char* message;
@@ -169,6 +170,7 @@ public:
 #endif
 	typedef int EnergyTermType;    // 32-bit energy terms
 #endif
+	// typedef double EnergyTermType;
 	typedef Energy<EnergyTermType,EnergyTermType,EnergyType> EnergyT;
 	typedef EnergyT::Var VarID;
 	typedef int LabelID;                     // Type for labels

@@ -107,7 +107,7 @@ double GetSimilirary(int data1,int data2){
 	if(data1>data2){
 		data1 ^= data2 ^= data1 ^= data2;
 	}
-    return fabs(simvals[(data1<<9)+data2]);
+    return (1-simvals[(data1<<9)+data2-data1*(data1+1)/2]);
 }
 double GetReliability(int data){
     return reliability[data];
@@ -157,7 +157,7 @@ void ConvertIdToPattern(cv::Mat &mat,int row_location,int col_location, int id)
     {
         for(int j = col_location; j < col_location + 3; ++j)
         {
-            mat.at<uchar>(i,j) = (id&1)?0:255;
+            mat.at<uchar>(i,j) = (id&1)?255:0;
             id >>= 1;
         }
     }
