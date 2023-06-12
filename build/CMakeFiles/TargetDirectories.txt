@@ -1,6 +1,0 @@
-/home/ianafp/code/CG/HQRC/build/CMakeFiles/rebuild_cache.dir
-/home/ianafp/code/CG/HQRC/build/CMakeFiles/edit_cache.dir
-/home/ianafp/code/CG/HQRC/build/CMakeFiles/HQRC.dir
-/home/ianafp/code/CG/HQRC/build/gco/CMakeFiles/edit_cache.dir
-/home/ianafp/code/CG/HQRC/build/gco/CMakeFiles/rebuild_cache.dir
-/home/ianafp/code/CG/HQRC/build/gco/CMakeFiles/GCO.dir
