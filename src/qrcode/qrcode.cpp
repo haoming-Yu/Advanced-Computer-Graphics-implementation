@@ -74,7 +74,13 @@ void generate_qr(int version, char* input_str)
     // compute the QR code data
     // update the error correction information
     int qr_spec[6];
-    QRspec_getEccSpec(version, QRlv, qr_spec);
+    int qr_spec_arg[5];
+    QRspec_getEccSpec(version, QRlv, qr_spec_arg);
+    qr_spec[0] = qr_spec_arg[0];
+    qr_spec[1] = qr_spec_arg[1];
+    qr_spec[2] = qr_spec_arg[2];
+    qr_spec[3] = qr_spec_arg[3];
+    qr_spec[4] = qr_spec_arg[4];
     qr_spec[5] = ecCapTable[version][QRlv];
     int ecc_value = QRspec_rsEcCapacity(qr_spec);
     

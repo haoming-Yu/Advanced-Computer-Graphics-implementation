@@ -1,5 +1,14 @@
-#include "../../../qrcode/qrencode.h"
-#include "../../../qrcode/qrspec.h"
+#include "bitstream.h"
+#include "config.h"
+#include "mask.h"
+#include "mmask.h"
+#include "mqrspec.h"
+#include "qrencode_inner.h"
+#include "qrencode.h"
+#include "qrinput.h"
+#include "qrspec.h"
+#include "rsecc.h"
+#include "split.h"
 // include the qrencode lib's header file
 
 /*
