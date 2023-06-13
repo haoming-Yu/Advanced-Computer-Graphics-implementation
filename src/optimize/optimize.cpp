@@ -66,6 +66,7 @@ void OptimizeBySwap(int row,int col,std::vector<module> &modules,std::vector<int
         for ( int i = 0; i < modules.size(); i++ ) {
             res.push_back(gc->whatLabel(i));
         }
+
         delete gc;
         delete[] data;
         delete[] smooth;

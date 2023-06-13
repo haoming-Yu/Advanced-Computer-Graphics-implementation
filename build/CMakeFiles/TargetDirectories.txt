@@ -1,0 +1,6 @@
+/mnt/f/潇某人/course/cg研究进展/Advanced-Computer-Graphics-implementation/build/CMakeFiles/rebuild_cache.dir
+/mnt/f/潇某人/course/cg研究进展/Advanced-Computer-Graphics-implementation/build/CMakeFiles/edit_cache.dir
+/mnt/f/潇某人/course/cg研究进展/Advanced-Computer-Graphics-implementation/build/CMakeFiles/HQRC.dir
+/mnt/f/潇某人/course/cg研究进展/Advanced-Computer-Graphics-implementation/build/gco/CMakeFiles/edit_cache.dir
+/mnt/f/潇某人/course/cg研究进展/Advanced-Computer-Graphics-implementation/build/gco/CMakeFiles/rebuild_cache.dir
+/mnt/f/潇某人/course/cg研究进展/Advanced-Computer-Graphics-implementation/build/gco/CMakeFiles/GCO.dir

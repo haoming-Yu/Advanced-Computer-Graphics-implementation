@@ -1,4 +1,4 @@
-from pre_process import PreProcessor,GetQrCode
+from pre_process import PreProcessor, GetQrCode
 import qrcode
 from PIL import Image
 import math
@@ -8,7 +8,6 @@ from data import pattern_reliability
 import itertools
 import copy
 import random
-
 
 
 def GeneratePatterns():
@@ -27,17 +26,6 @@ def GeneratePatterns():
         Patterns.append([matrix, color, reliability])
 
     return copy.deepcopy(Patterns)
-
-Patterns = GeneratePatterns()  # 512种pattern
-
-qrcode_img = GetQrCode('helloworld!')
-obj_img = Image.open("ftm.png")
-
-preprocessor = PreProcessor(obj_img, qrcode_img)
-Modules = preprocessor.GetModules()
-# 计算图像在Modules维度上的长和宽
-M_height = int(math.sqrt(len(Modules)))
-M_width = int(math.sqrt(len(Modules)))
 
 
 def reliabilityEnerge(f, module_index):
@@ -108,7 +96,8 @@ def regularizationEnergy(f, module_index):
             pattern_similiarity = Pattern_Similarity_Matrix[f[module_index] + f[nb_idx] * 512 - spill]
 
         binary_enerage = binary_enerage + \
-                         module[2] * math.exp(-1 * Diff(np.array(module[0]), np.array(neighbor[0]))) * pattern_similiarity
+                         module[2] * math.exp(
+            -1 * Diff(np.array(module[0]), np.array(neighbor[0]))) * pattern_similiarity
 
     return unary_energe, binary_enerage
 
@@ -130,7 +119,19 @@ def bindingConstraintEnerge(f, module_index):
 
     return energe
 
+
 # test
+Patterns = GeneratePatterns()  # 512种pattern
+
+qrcode_img = GetQrCode('helloworld!')
+obj_img = Image.open("ftm.png")
+
+preprocessor = PreProcessor(obj_img, qrcode_img)
+Modules = preprocessor.GetModules()
+# 计算图像在Modules维度上的长和宽
+M_height = int(math.sqrt(len(Modules)))
+M_width = int(math.sqrt(len(Modules)))
+
 min_value = 0  # 最小值
 max_value = 511  # 最大值
 
@@ -139,5 +140,5 @@ f = [random.randint(min_value, max_value) for _ in range(len(Modules))]
 
 for i in range(len(Modules)):
     print("Module_", i)
-    print("rel_enerage", reliabilityEnerge(f, i), ';', "reg_enerage", regularizationEnergy(f, i), ";", "bind_enerage", bindingConstraintEnerge(f, i))
-
+    print("rel_enerage", reliabilityEnerge(f, i), ';', "reg_enerage", regularizationEnergy(f, i), ";", "bind_enerage",
+          bindingConstraintEnerge(f, i))

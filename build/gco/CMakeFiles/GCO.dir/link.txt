@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libGCO.so -o libGCO.so CMakeFiles/GCO.dir/src/GCoptimization.cpp.o CMakeFiles/GCO.dir/src/LinkedBlockList.cpp.o 

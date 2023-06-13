@@ -112,5 +112,13 @@ class PreProcessor():
         return res 
     def GetQrImg(self)->Image:
         res = Image.fromarray(self.qr_arr*255,"L")
-        return res 
+        return res
 
+qr = GetQrCode("Blow out to sea", 5)
+qr.save("../img/zyx/qr.png", format="PNG", quality=100)
+obj_img = Image.open("../img/zyx/zyx.jpg")
+preprocessor = PreProcessor(obj_img, qr)
+halftone = preprocessor.GetHalfToneImg()
+halftone.save("../img/zyx/halftone.png", format="PNG", quality=100)
+border = preprocessor.GetBorderImg()
+border.save("../img/zyx/border.png", format="PNG", quality=100)
