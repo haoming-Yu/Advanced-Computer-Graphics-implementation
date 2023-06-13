@@ -58,7 +58,7 @@ def HalfTone(img:Image, k:int =4, f:bool=False, useGray:bool=False)->np.array:
     return newImg
 
 def GetQrCode(data,version:int = 31)->Image:
-    qr = qrcode.QRCode(version,box_size=3,border=0)
+    qr = qrcode.QRCode(version,box_size=3,border=0,error_correction=qrcode.constants.ERROR_CORRECT_H)
     qr.add_data(data)
     qr.make()
     return qr.make_image()
