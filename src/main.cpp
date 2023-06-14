@@ -1,14 +1,23 @@
 #include"halftone/halftone.h"
 #include"pre_process/pre_process.h"
+#include"qrcode/qrcode.h"
 #include"optimize/optimize.h"
 #include<iostream>
-
+#include<unordered_set>
 
 int main(void)
 {
     cv::Mat halftone = cv::imread("../img/37x37/halftone.png",cv::ImreadModes::IMREAD_GRAYSCALE);
     cv::Mat qrcode = cv::imread("../img/37x37/qr.png",cv::ImreadModes::IMREAD_GRAYSCALE);
     cv::Mat importance = cv::imread("../img/37x37/border.png",cv::ImreadModes::IMREAD_GRAYSCALE);
+    cv::Mat qr_code_test;
+    int version = 5;
+    char qr_str[6] = "Hello";
+    std::unordered_set<int> necessary_idx;
+    std::cout << "OK0" << std::endl;
+    generate_qr(version, qr_str, necessary_idx, qr_code_test); 
+    std::cout << "Size of necessary modules are: " << necessary_idx.size() << std::endl;
+    cv::imwrite("../img/generated_qr.png", qr_code_test);
 
     std::cout << "input" << std::endl;
     std::cout << halftone.rows << "," << halftone.cols << std::endl;
