@@ -149,7 +149,7 @@ std::vector<QRmodule*> generate_qr(int version, char* input_str, std::unordered_
             } else if (rsval == 192 || rsval == 193) {
                 // Separators patterns & position detection patterns
                 mType = 6;
-            }
+            } else mType = 7;
 
             // record all data codeword type's rs value, construct the RS map
             RSPTR[col] = (mType == 0) ? rsval : -1;
@@ -169,7 +169,7 @@ std::vector<QRmodule*> generate_qr(int version, char* input_str, std::unordered_
             qr_module->CWID = cwval; // code word index (start from 1, 1-based index)
             modules.push_back(qr_module);
 
-            if (mType == 0) {
+            if (mType == 0 || mType == 1 || mType == 2 || mType == 3 || mType == 4 || mType == 5 || mType == 7) {
                 // do something to create the RS block.
                 // omitted here for now.
             } else {
