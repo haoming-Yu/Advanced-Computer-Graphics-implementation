@@ -10,7 +10,7 @@ EnergyType GetDataCost(module m,int PatternId)
     double penalty_cost = int(pattern_color!=m.center) * penalty_beta;  
     double r_cost = exp(-m.importance) * (1-r);
     double simlirity_cost = GetSimilirary(m.data,PatternId);
-    return cv::saturate_cast<EnergyType>(simlirity_cost + r_cost + penalty_cost);
+    return cv::saturate_cast<EnergyType>(20 * simlirity_cost + r_cost + penalty_cost);
 }
 EnergyType GetSmoothCost(int PatternId1,int PatternId2)
 {

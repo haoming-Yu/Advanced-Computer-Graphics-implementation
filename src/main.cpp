@@ -30,18 +30,24 @@ int main(void)
     OptimizeBySwap(halftone.rows,halftone.cols,modules,label);
 
     int index = 0;
+    int error_module = 0; // 指的是那些中心颜色和原二维码不一致的module
     for(int i=0;i < qrcode.rows; i += 3)
     {
         for(int j=0; j < qrcode.cols; j += 3)
         {
+            int copy = qrcode.at<uchar>(i + 1, j + 1);
             if ( necessary_idx.find((i/3)*(qrcode.cols/3) + j/3) != necessary_idx.end() ){
-                std::cout << (i/3)*(qrcode.cols/3) + j/3 << " ";
                 index++;
             }
             else{
                 ConvertIdToPattern(qrcode,i,j,label[index++]);
             }
+
+            if (qrcode.at<uchar>(i + 1, j + 1) != copy)
+                error_module++;
+                qrcode.at<uchar>(i + 1, j + 1) = copy;
         }
     }
+    std::cout << "error modules: " << error_module << std::endl;
     cv::imwrite("../img/37x37/res_qr.png",qrcode);
 }
