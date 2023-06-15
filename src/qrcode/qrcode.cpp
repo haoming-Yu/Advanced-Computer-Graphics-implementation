@@ -191,7 +191,10 @@ cv::Mat& qr_img, std::vector<mRSblock*>& QR_rs_blocks)
                 rs_block->CodeWords[cwval - 1]->modules.push_back(qr_module);
             }
             
-            if (mType == 6) {
+            if (mType == 0 || mType == 1 || mType == 2 || mType == 3 || mType == 4 || mType == 5 || mType == 7 ) {
+                // do something to create the RS block.
+                // omitted here for now.
+            } else {
                 necessary.insert(idx);
             }
         }
