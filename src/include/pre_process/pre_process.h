@@ -64,7 +64,7 @@ public:
     int CWID; // Codeword ID in the RS block (1-based index, -1 indicates non data module)
     int PID1; // Ideal/Original pattern ID
     int PID2; // optimal pattern ID
-    // int VID; // vertex index in the graph -> NO use for us
+    // int VID; // vertex index in the graph -> NO use for us, we use matrix instead of graph
     double weit; // importance of the module (0-1, -1 indicates non data module)
 };
 

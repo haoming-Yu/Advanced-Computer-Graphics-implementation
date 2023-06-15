@@ -53,10 +53,13 @@ static const int ecCapTable[QRSPEC_VERSION_MAX+1][4]={
 };
 
 /*
- * @return: all modules with full information, including types
- * 
+ * @return: all modules with full information, including types (actually this is used for debug)
+ * @param qr_img -> this parameter will be filled with a cv::Mat object with width&height extended 3 times bigger than original version
+ * @param QR_rs_blocks -> this parameter will be filled with a vector contains all the RS blocks
  */
-std::vector<QRmodule*> generate_qr(int version, char* input_str, std::unordered_set<int>& necessary, cv::Mat& qr_img)
+std::vector<QRmodule*> generate_qr(int version, 
+char* input_str, std::unordered_set<int>& necessary, 
+cv::Mat& qr_img, std::vector<mRSblock*>& QR_rs_blocks)
 {
     // note that the input_str must be ended with a '\0' character.
     QRcode *qrcodeB, *qrcodeC, *qrcodeT;
@@ -75,9 +78,10 @@ std::vector<QRmodule*> generate_qr(int version, char* input_str, std::unordered_
     qrcodeB = QRcode_encodeString(input_str, version, QRlv, qrMode, 1);
     qrcodeC = QRcode_encodeString(input_str, version, QRlv, qrMode, 1);
     qrcodeT = QRcode_encodeString(input_str, version, QRlv, qrMode, 1);
-    std::cout << "OK1" << std::endl;
     // compute the QR code data
-    // update the error correction information
+
+    ///////////////////////////////////////////
+    /// update the error correction information
     int qr_spec[6];
     int qr_spec_arg[5];
     QRspec_getEccSpec(version, QRlv, qr_spec_arg);
@@ -88,13 +92,26 @@ std::vector<QRmodule*> generate_qr(int version, char* input_str, std::unordered_
     qr_spec[4] = qr_spec_arg[4];
     qr_spec[5] = ecCapTable[version][QRlv];
     int ecc_value = QRspec_rsEcCapacity(qr_spec);
-    
     int rs_num = QRspec_rsBlockNum(qr_spec); 
     // this variable represent the total number of the RS block
     int rs_block_num[2] = {QRspec_rsBlockNum1(qr_spec), QRspec_rsBlockNum2(qr_spec)};
     // this variable represent the block number of the RS block seperately (seperated into 2 blocks)
     int rs_block_size[2] = {QRspec_rsCodeWords1(qr_spec), QRspec_rsCodeWords2(qr_spec)};
     // this variable represent the block size of the RS block seperately (seperated into 2 blocks)
+    /// update error correction info- end here.
+    ///////////////////////////////////////////
+
+    // pre-allocate RS block and code words
+    QR_rs_blocks.resize(rs_num, nullptr);
+    for (int i = 0; i < rs_num; ++i) {
+        int rsb_code_word = (i < rs_block_num[0]) ? rs_block_size[0] : rs_block_size[1];
+        mRSblock* rs_block_create = new mRSblock();
+        rs_block_create->CodeWords.resize(rsb_code_word, nullptr);
+        for (int j = 0; j < rsb_code_word; ++j) {
+            rs_block_create->CodeWords[j] = new CodeWord();
+        }
+        QR_rs_blocks[i] = rs_block_create;
+    }
 
     std::vector<QRmodule*> modules; // used to store all the modules, might be useful for further process
     // here I just use this as a variable for debug.
@@ -111,7 +128,6 @@ std::vector<QRmodule*> generate_qr(int version, char* input_str, std::unordered_
     qrcRS.create(QRSize, QRSize, CV_32SC1); // 32 bit signed integer, 1 channel
     qrcCW.create(QRSize, QRSize, CV_32SC1); // 32 bit signed integer, 1 channel
     // process the information of symbol objects acquired from the lib qrencode
-    std::cout << "OK2" << std::endl;
     for (int row = 0; row < QRSize; ++row) {
         int row_step = row*QRSize;
         unsigned char* qrcPTR = qrcode.ptr<unsigned char>(row);
@@ -169,14 +185,21 @@ std::vector<QRmodule*> generate_qr(int version, char* input_str, std::unordered_
             qr_module->CWID = cwval; // code word index (start from 1, 1-based index)
             modules.push_back(qr_module);
 
-            if (mType == 0 || mType == 1 || mType == 2 || mType == 3 || mType == 4 || mType == 5 || mType == 7) {
-                // do something to create the RS block.
-                // omitted here for now.
-            } else {
+            // Get RS block and code word data if the type is 0
+            if (mType == 0) {
+                mRSblock* rs_block = QR_rs_blocks[rsval - 1];
+                rs_block->CodeWords[cwval - 1]->modules.push_back(qr_module);
+            }
+            
+            if (mType == 6) {
                 necessary.insert(idx);
             }
         }
     }
+
+    free(qrcodeB);
+    free(qrcodeC);
+    free(qrcodeT);
 
     cv::Size changed_size = qrcode.size();
     changed_size.width *= 3;
