@@ -7,8 +7,8 @@
 #include<vector>
 #include<unordered_set>
 
-std::string file_folder = "../img/beihaiting/";
-std::string file_name = "beihaiting.jfif";
+std::string file_folder = "../img/zx/";
+std::string file_name = "zx.jpg";
 
 void ImageChannelProcess(cv::Mat& HalftoneMat,cv::Mat& QrMat,cv::Mat& ImpMat,cv::Mat& ResMat,std::unordered_set<int>& necessary_idx)
 {
@@ -59,7 +59,7 @@ int main(void)
     cv::Mat original = cv::imread(file_folder + file_name,-1);
     
     // resize
-    cv::resize(original,original,cv::Size(111,111),0.0,0.0,cv::INTER_CUBIC);
+    cv::resize(original,original,cv::Size(image_size,image_size),0.0,0.0,cv::INTER_CUBIC);
     // get channel counts
     int channel_counts = original.channels();
     cv::Mat* channels = new cv::Mat[channel_counts];
