@@ -18,6 +18,7 @@ int buildFrequencyContent(Image *img, FrequencyContent *out)
 void cvHalftone(cv::Mat *_in, cv::Mat* _out)
 {
 	CvMat cvmat_in = cvMat(*_in);
+	*_out = cv::Mat(_in->rows,_in->cols,CV_64FC1);
 	CvMat cvmat_out = cvMat(*_out);
 	CvMat* in = &cvmat_in,*out = &cvmat_out;
 	static int ready = 0;
@@ -57,7 +58,7 @@ void cvHalftone(cv::Mat *_in, cv::Mat* _out)
 	freeImage(&bitone);
 	freeFrequencyContent(&freqContent);
 
-	*_out = cv::Mat(out->rows,out->cols,CV_64FC1,out->data.fl).clone();
+
 	_out->convertTo(*_out,CV_8UC1,255);
 	for(i = 0;i<height;++i)
 	{

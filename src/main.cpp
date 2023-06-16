@@ -8,7 +8,14 @@
 
 int main(void)
 {
-    cv::Mat halftone = cv::imread("../img/37x37/halftone.png",cv::ImreadModes::IMREAD_GRAYSCALE);
+    cv::Mat original = cv::imread("../img/37x37/yhm.jpg",cv::ImreadModes::IMREAD_GRAYSCALE);
+    cv::Mat halftone;
+    cv::resize(original,original,cv::Size(111,111),0.0,0.0,cv::INTER_CUBIC);
+    cvHalftone(&original,&halftone);
+    std::cout<<original.rows<<", "<<original.cols<<std::endl;
+    cv::imwrite("../img/37x37/halftone_cpp_pre_resize.png",halftone);
+
+    // cv::Mat halftone = cv::imread("../img/37x37/halftone.png",cv::ImreadModes::IMREAD_GRAYSCALE);
     // cv::Mat qrcode = cv::imread("../img/37x37/qr.png",cv::ImreadModes::IMREAD_GRAYSCALE);
     cv::Mat importance = cv::imread("../img/37x37/border.png",cv::ImreadModes::IMREAD_GRAYSCALE);
     cv::Mat qrcode;
