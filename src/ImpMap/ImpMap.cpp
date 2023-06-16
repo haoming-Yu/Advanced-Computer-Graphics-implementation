@@ -1,13 +1,6 @@
 // #include <opencv.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <iostream>
-#include <string>
-#include <math.h>
-#include <vector>
-using namespace cv;
-using namespace std;
+#include "ImpMap/ImpMap.h"
+
 // teste
 typedef Matx<float, 2, 2> tensor;
 // bilateral variables
@@ -101,11 +94,13 @@ Mat color_quantize(Mat src, int s)
 }
 void GetBorderImg(cv::Mat& in,cv::Mat& out)
 {
-    Mat im = in,gray,lab;
+    Mat im = in;
+	Mat gray, lab;
 	int rows = im.rows;
 	int cols = im.cols;
 
 	cvtColor(im, gray, COLOR_BGR2GRAY);
+	
 	Mat smooth;
 	bilateralFilter(gray, smooth, 6, 150, 150);
 

@@ -114,11 +114,11 @@ class PreProcessor():
         res = Image.fromarray(self.qr_arr*255,"L")
         return res
 
-qr = GetQrCode("Blow out to sea", 5)
-qr.save("../img/zyx/qr.png", format="PNG", quality=100)
-obj_img = Image.open("../img/zyx/zyx.jpg")
+qr = GetQrCode("BABY", 5)
+qr.save("../img/baby/qr.png", format="PNG", quality=100)
+obj_img = Image.open("../img/baby/baby.png")
 preprocessor = PreProcessor(obj_img, qr)
 halftone = preprocessor.GetHalfToneImg()
-halftone.save("../img/zyx/halftone.png", format="PNG", quality=100)
+halftone.save("../img/baby/halftone.png", format="PNG", quality=100)
 border = preprocessor.GetBorderImg()
-border.save("../img/zyx/border.png", format="PNG", quality=100)
+border.save("../img/baby/border.png", format="PNG", quality=100)

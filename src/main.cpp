@@ -2,25 +2,31 @@
 #include"pre_process/pre_process.h"
 #include"qrcode/qrcode.h"
 #include"optimize/optimize.h"
+#include "ImpMap/ImpMap.h"
 #include<iostream>
 #include<vector>
 #include<unordered_set>
 
+std::string file_folder = "../img/baby/";
+std::string file_name = "baby.png";
+
 int main(void)
 {
-    cv::Mat original = cv::imread("../img/37x37/yhm.jpg",cv::ImreadModes::IMREAD_GRAYSCALE);
+    cv::Mat original = cv::imread(file_folder + file_name,cv::ImreadModes::IMREAD_GRAYSCALE);
     cv::Mat halftone;
     cv::resize(original,original,cv::Size(111,111),0.0,0.0,cv::INTER_CUBIC);
     cvHalftone(&original,&halftone);
     std::cout<<original.rows<<", "<<original.cols<<std::endl;
-    cv::imwrite("../img/37x37/halftone_cpp_pre_resize.png",halftone);
+    cv::imwrite(file_folder + "halftone_cpp_pre_resize.png",halftone);
+    cv::Mat importance;
+    original = cv::imread(file_folder + file_name);
+    cv::resize(original,original,cv::Size(111,111),0.0,0.0,cv::INTER_CUBIC);
+    GetBorderImg(original, importance);
+    cv::imwrite(file_folder + "importance_cpp_pre_resize.png",importance);
 
-    // cv::Mat halftone = cv::imread("../img/37x37/halftone.png",cv::ImreadModes::IMREAD_GRAYSCALE);
-    // cv::Mat qrcode = cv::imread("../img/37x37/qr.png",cv::ImreadModes::IMREAD_GRAYSCALE);
-    cv::Mat importance = cv::imread("../img/37x37/border.png",cv::ImreadModes::IMREAD_GRAYSCALE);
     cv::Mat qrcode;
     int version = 5;
-    char qr_str[11] = "YuSir YYDS";
+    char qr_str[11] = "YuuuuSir!";
     std::unordered_set<int> necessary_idx;
     std::vector<mRSblock*> QR_rs_blocks;
     generate_qr(version, qr_str, necessary_idx, qrcode, QR_rs_blocks);
@@ -33,7 +39,7 @@ int main(void)
         }
     }
     std::cout << "necessary modules size is: " << necessary_idx.size() << std::endl;
-    cv::imwrite("../img/37x37/qr.png", qrcode);
+    cv::imwrite(file_folder + "qr.png", qrcode);
 
     std::cout << "input" << std::endl;
     std::cout << halftone.rows << "," << halftone.cols << std::endl;
@@ -65,6 +71,6 @@ int main(void)
         }
     }
     std::cout << "error modules: " << error_module << std::endl;
-    cv::imwrite("../img/37x37/res_qr.png",qrcode);
+    cv::imwrite(file_folder + "res_qr.png",qrcode);
     std::cout << std::endl;
 }
