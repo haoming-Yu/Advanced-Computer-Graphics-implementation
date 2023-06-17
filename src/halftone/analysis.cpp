@@ -146,7 +146,7 @@ static void findCloseExtrema(AnalysisKernel *window, int xWaveNumber, int yWaveN
 
 	// Compute the frequency and the corresponding period
 	double frequency = sqrt(xSignedWaveNumber*xSignedWaveNumber + ySignedWaveNumber*ySignedWaveNumber) * (2*PI) / ANALYSIS_KERNEL_LENGTH;
-	double period = (2*PI) / frequency;
+	double period = (2*PI) / (frequency + 1);
 	double halfPeriod = period / 2;
 
 	// Allow the extrema to be found within the period, centered on pixel of interest, but not specifically at given orientation
